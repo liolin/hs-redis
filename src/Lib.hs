@@ -16,6 +16,7 @@ import Parser (runParser, string)
 
 runTCPServer :: Maybe HostName -> ServiceName -> (Socket -> IO a) -> IO a
 runTCPServer mhost port server = withSocketsDo $ do
+  putStrLn $ "Start running on port " ++ port
   addr <- resolve
   E.bracket (open addr) close loop
   where

@@ -86,8 +86,8 @@ digit = satisfy isDigit
 string :: Eq i => [i] -> Parser i e [i]
 string = traverse char
 
-number :: Parser Char e Char
-number = do
-  d <- digit
-  ds <- number
-  return (d : ds)
+-- number :: Parser Char e Char
+-- number = do
+--   d <- digit
+--   ds <- number
+--   return (d : ds)
